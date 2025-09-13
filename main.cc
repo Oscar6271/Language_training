@@ -29,7 +29,7 @@ void trim_white_space(string & phrase, string & translation)
 }
 
 void readfile(string const& fileName, string const& language_to_write_in,
-                            vector<string> & phrases, vector<string> & translations)
+              vector<string> & phrases, vector<string> & translations)
 {
     ifstream file{fileName};
     string line;
@@ -41,15 +41,15 @@ void readfile(string const& fileName, string const& language_to_write_in,
         {
             string phrase, translation;
 
-            if(language_to_write_in != "spanish")
-            {
-                translation = line.substr(0, pos);
-                phrase = line.substr(pos + 1);
-            }
-            else
+            if(language_to_write_in == "spanish" || language_to_write_in == "no_clear")
             {
                 phrase = line.substr(0, pos);
                 translation = line.substr(pos + 1);
+            }
+            else
+            {
+                translation = line.substr(0, pos);
+                phrase = line.substr(pos + 1);
             }
 
             trim_white_space(phrase, translation);
@@ -82,6 +82,8 @@ int main(int argc, char* argv[])
     vector<string> phrases, translation;
     string userInput{};
 
+    bool clear{string(argv[argc - 1]) != "no_clear"};   
+
     if(argc >= 3)
     {
         readfile(argv[1], argv[2], phrases, translation);
@@ -91,6 +93,11 @@ int main(int argc, char* argv[])
         readfile(argv[1], "spanish", phrases, translation);
     }
 
+    if(clear)
+    {
+        system("clear");
+    }
+    
     cout << "Skriv översättningen för ordet som skrivs ut\n\n";
 
     while(!phrases.empty())
@@ -112,7 +119,12 @@ int main(int argc, char* argv[])
 
             if(!phrases.empty())
             {
-                cout << "Träna på dom ord du hade fel på\n";
+                if(clear)
+                {
+                    system("clear");
+                }
+                
+                cout << "Träna på dom ord du hade fel på\n\n";
             }
         }
     }

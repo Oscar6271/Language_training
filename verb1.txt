@@ -1,5 +1,4 @@
-
-skydda : proteger
+skydda : protege
 skapa : crear
 förklara : explicar
 diskutera : discutir
@@ -8,7 +7,7 @@ vända : volver
 anlända : llegar
 förstå : entender
 lämna : dejar
-passa : caber
+passa in : caber
 gilla : gustar
 hata : odiar
 respektera : respetar

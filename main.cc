@@ -86,13 +86,18 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
 
         if(!phrases.empty())
         {
-            if(clear)
-            {
-                system("clear");
-            }
+            clear_terminal(clear);
             
             cout << "Träna på dom ord du hade fel på\n\n";
         }
+    }
+}
+
+void clear_terminal(bool clear)
+{
+    if(clear)
+    {
+        system("clear");
     }
 }
 
@@ -112,10 +117,7 @@ int main(int argc, char* argv[])
         readfile(argv[1], "spanish", phrases, translation);
     }
 
-    if(clear)
-    {
-        system("clear");
-    }
+    clear_terminal(clear);
     
     cout << "Skriv översättningen för ordet som skrivs ut\n\n";
 
@@ -133,6 +135,8 @@ int main(int argc, char* argv[])
 
         check_empty(phrases, translation, clear);
     }
+
+    clear_terminal(clear);
 
     cout << "Klar!\n";
     

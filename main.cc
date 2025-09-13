@@ -39,8 +39,18 @@ void readfile(string const& fileName, string const& language_to_write_in,
         auto pos = line.find(':');
         if(pos != string::npos)
         {
-            string phrase = line.substr(0, pos);
-            string translation = line.substr(pos + 1);
+            string phrase, translation;
+
+            if(language_to_write_in != "spanish")
+            {
+                translation = line.substr(0, pos);
+                phrase = line.substr(pos + 1);
+            }
+            else
+            {
+                phrase = line.substr(0, pos);
+                translation = line.substr(pos + 1);
+            }
 
             trim_white_space(phrase, translation);
 
@@ -78,7 +88,7 @@ int main(int argc, char* argv[])
     }
     else 
     {
-        readfile(argv[1], "not_swedish", phrases, translation);
+        readfile(argv[1], "spanish", phrases, translation);
     }
 
     cout << "Skriv översättningen för ordet som skrivs ut\n\n";

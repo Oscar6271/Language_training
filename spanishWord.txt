@@ -1,0 +1,24 @@
+siguiente : nästa
+brazos : armar
+caminan : går
+niño : barn
+ciudad : stad
+pequeño : liten
+ventanas : fönster
+través : genom
+peude : kan
+fuera : ute
+ver : se
+dentro : inom
+página : sida
+camión : lastbil
+autobús : buss
+edificios : byggnad
+tienen : har
+calle : gata
+abrigado : varmt
+parece : verkar
+leer : gillar
+noche : kväll
+cada : varje
+va a la cama : går och lägga sig

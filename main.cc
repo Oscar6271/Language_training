@@ -20,6 +20,14 @@ string to_lower(string & word)
     return word;
 }
 
+void trim_white_space(string & phrase, string & translation)
+{
+    phrase.erase(0, phrase.find_first_not_of(" \t"));
+    phrase.erase(phrase.find_last_not_of(" \t") + 1);
+    translation.erase(0, translation.find_first_not_of(" \t"));
+    translation.erase(translation.find_last_not_of(" \t") + 1);
+}
+
 void readfile(string const& fileName, string const& language_to_write_in,
                             vector<string> & phrases, vector<string> & translations)
 {
@@ -34,11 +42,7 @@ void readfile(string const& fileName, string const& language_to_write_in,
             string phrase = line.substr(0, pos);
             string translation = line.substr(pos + 1);
 
-            // ta bort whitespace runt orden
-            phrase.erase(0, phrase.find_first_not_of(" \t"));
-            phrase.erase(phrase.find_last_not_of(" \t") + 1);
-            translation.erase(0, translation.find_first_not_of(" \t"));
-            translation.erase(translation.find_last_not_of(" \t") + 1);
+            trim_white_space(phrase, translation);
 
             phrases.push_back(phrase);
             translations.push_back(translation);
@@ -46,30 +50,21 @@ void readfile(string const& fileName, string const& language_to_write_in,
     }
 }
 
-bool compare(string userInput, int randomIndex, 
-             vector<string> & phrases, vector<string> & translations,
-             bool push_back = true)
+void compare(string userInput, int randomIndex, 
+             vector<string> & phrases, vector<string> & translations)
 {
-    bool correct{};
     if(userInput != translations.at(randomIndex))
     {
         cout << "Fel svar!\n" << phrases.at(randomIndex) 
                 << " = " << translations.at(randomIndex) << "\n\n"; 
 
-        if(push_back)
-        {
-            wrong_answers.push_back(phrases.at(randomIndex)),
-            wrong_translations.push_back(translations.at(randomIndex));
-        }
-        correct = false;
+        wrong_answers.push_back(phrases.at(randomIndex)),
+        wrong_translations.push_back(translations.at(randomIndex));
     }
     else
     {
         cout << "Rätt!\n\n";
-        correct = true;
     }
-
-    return correct;
 }
 
 int main(int argc, char* argv[])
@@ -88,7 +83,7 @@ int main(int argc, char* argv[])
 
     cout << "Skriv översättningen för ordet som skrivs ut\n\n";
 
-    while(true)
+    while(!phrases.empty())
     {
         int randomIndex{rand() % (int) phrases.size()};
         cout << phrases.at(randomIndex) << ": ";
@@ -102,25 +97,13 @@ int main(int argc, char* argv[])
 
         if(phrases.empty())
         {
-            break;
-        }
-    }
+            phrases = std::move(wrong_answers);
+            translation = std::move(wrong_translations);
 
-    cout << "Träna på dom ord du hade fel på\n";
-
-    while(!wrong_answers.empty())
-    {
-        int randomIndex{rand() % (int) wrong_answers.size()};
-        cout << wrong_answers.at(randomIndex) << ": ";
-
-        cin >> userInput;
-
-        bool correct = compare(userInput, randomIndex, wrong_answers, wrong_translations, false);
-
-        if(correct)
-        {
-            wrong_answers.erase(wrong_answers.begin() + randomIndex);
-            wrong_translations.erase(wrong_translations.begin() + randomIndex);
+            if(!phrases.empty())
+            {
+                cout << "Träna på dom ord du hade fel på\n";
+            }
         }
     }
 

@@ -77,6 +77,25 @@ void compare(string userInput, int randomIndex,
     }
 }
 
+void check_empty(vector<string> & phrases, vector<string> & translation, bool clear)
+{
+    if(phrases.empty())
+    {
+        phrases = std::move(wrong_answers);
+        translation = std::move(wrong_translations);
+
+        if(!phrases.empty())
+        {
+            if(clear)
+            {
+                system("clear");
+            }
+            
+            cout << "Träna på dom ord du hade fel på\n\n";
+        }
+    }
+}
+
 int main(int argc, char* argv[])
 {
     vector<string> phrases, translation;
@@ -112,21 +131,7 @@ int main(int argc, char* argv[])
         phrases.erase(phrases.begin() + randomIndex);
         translation.erase(translation.begin() + randomIndex);
 
-        if(phrases.empty())
-        {
-            phrases = std::move(wrong_answers);
-            translation = std::move(wrong_translations);
-
-            if(!phrases.empty())
-            {
-                if(clear)
-                {
-                    system("clear");
-                }
-                
-                cout << "Träna på dom ord du hade fel på\n\n";
-            }
-        }
+        check_empty(phrases, translation, clear);
     }
 
     cout << "Klar!\n";

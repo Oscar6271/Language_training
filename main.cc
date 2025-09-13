@@ -37,11 +37,11 @@ void trim_white_space(string & phrase, string & translation)
     translation.erase(translation.find_last_not_of(" \t") + 1);
 }
 
-void readfile(string const& fileName, string const& language_to_write_in,
+pair<string, string> readfile(string const& fileName, string const& language_to_write_in,
               vector<string> & phrases, vector<string> & translations)
 {
     ifstream file{fileName};
-    string line;
+    string line, message{}, redo_message{};
 
     while(getline(file, line))
     {
@@ -66,7 +66,18 @@ void readfile(string const& fileName, string const& language_to_write_in,
             phrases.push_back(phrase);
             translations.push_back(translation);
         }
+        else
+        {
+            message = line;
+            if(getline(file, line))
+            {
+                redo_message = line;
+            }
+        }
     }
+    file.close();
+
+    return make_pair(message, redo_message);
 }
 
 void compare(string userInput, int randomIndex, 
@@ -86,7 +97,7 @@ void compare(string userInput, int randomIndex,
     }
 }
 
-void check_empty(vector<string> & phrases, vector<string> & translation, bool clear)
+void check_empty(vector<string> & phrases, vector<string> & translation, bool clear, string redo_message)
 {
     if(phrases.empty())
     {
@@ -97,7 +108,7 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
         {
             clear_terminal(clear);
             wrongCount += phrases.size();
-            cout << "Träna på dom ord du hade fel på\n\n";
+            cout << (redo_message == "" ? "Träna på dom ord du hade fel på" : redo_message) << "\n\n";
         }
     }
 }
@@ -105,22 +116,26 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
 int main(int argc, char* argv[])
 {
     vector<string> phrases, translation;
-    string userInput{};
+    string userInput{}, instruction, redo_message;
+    pair<string, string> messages{};
 
     bool clear{string(argv[argc - 1]) != "no_clear"};   
 
     if(argc >= 3)
     {
-        readfile(argv[1], argv[2], phrases, translation);
+        messages = readfile(argv[1], argv[2], phrases, translation);
     }
     else 
     {
-        readfile(argv[1], "spanish", phrases, translation);
+        messages = readfile(argv[1], "spanish", phrases, translation);
     }
 
     clear_terminal(clear);
+    instruction = messages.first;
+    redo_message = messages.second;
     
-    cout << "Skriv översättningen för ordet som skrivs ut\n\n";
+    cout << (instruction == "" ? "Skriv översättningen för ordet som skrivs ut" : instruction) 
+         << "\n\n";
 
     while(!phrases.empty())
     {
@@ -134,7 +149,7 @@ int main(int argc, char* argv[])
         phrases.erase(phrases.begin() + randomIndex);
         translation.erase(translation.begin() + randomIndex);
 
-        check_empty(phrases, translation, clear);
+        check_empty(phrases, translation, clear, redo_message);
     }
 
     clear_terminal(clear);

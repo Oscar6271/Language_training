@@ -9,6 +9,15 @@
 using namespace std;
 
 vector<string> wrong_answers{}, wrong_translations{};
+int wrongCount{};
+
+void clear_terminal(bool clear)
+{
+    if(clear)
+    {
+        system("clear");
+    }
+}
 
 string to_lower(string & word)
 {
@@ -87,17 +96,9 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
         if(!phrases.empty())
         {
             clear_terminal(clear);
-            
+            wrongCount += phrases.size();
             cout << "Träna på dom ord du hade fel på\n\n";
         }
-    }
-}
-
-void clear_terminal(bool clear)
-{
-    if(clear)
-    {
-        system("clear");
     }
 }
 
@@ -138,7 +139,7 @@ int main(int argc, char* argv[])
 
     clear_terminal(clear);
 
-    cout << "Klar!\n";
+    cout << "Klar!\nTotalt hade du: " << wrongCount << " fel\n";
     
     return 0;
 }

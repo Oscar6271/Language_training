@@ -84,9 +84,10 @@ void printfile(string const& fileName, vector<string> const& phrases, vector<str
 {
     for(size_t i = 0; i < phrases.size(); i++)
     {
-        cout << phrases.at(i) << ' ' << translation.at(i) << '\n';
+        cout << phrases.at(i) << "\t = " << translation.at(i) << "\n";
+        cout << "￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n";
     }
-    cout << '\n';
+    // cout << '\n';
 }
 
 void compare(string userInput, int randomIndex, 

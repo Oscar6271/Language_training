@@ -5,7 +5,7 @@
 
 <i>filnamn</i> byts ut mot sökvägen för filen med orden och dess översättningar i. Filen måste vara en .txt fil men .txt ska inte skrivas ut.
 
-<i>list</i> är ett frivilligt kommand som kan skrivas för att skriva ut alla orden och dess översättningar från den valda filen
+<i>list</i> är ett frivilligt argument som kan skrivas för att skriva ut alla orden och dess översättningar från den valda filen
 
 <i>språk/clear</i> byts ut med det språk man vill skriva i om inget språk anges blir det språket som översättningen står i som default
 
@@ -14,9 +14,9 @@ Programmet kommer som default att kunna rensa terminalen vill man inte ha den fu
 ## Format för filer
 Filerna skriv enligt formatet:<br>
 <i>ord</i> : översättning<br>
-.
-.
-.
+.<br>
+.<br>
+.<br>
 Instruktioner<br>
 Meddelande när användaren ska rätta sina fel<br>
 

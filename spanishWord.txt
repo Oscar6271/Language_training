@@ -1,6 +1,6 @@
 nästa : siguiente
 armar : brazos
-går : promenera
+promenera : caminan
 barn : niño
 stad : ciudad
 liten : pequeño
@@ -18,6 +18,6 @@ har : tienen
 gata : calle
 varmt : abrigado
 verkar : parece
-gillar : leer
+läsa : leer
 kväll : noche
 varje : cada

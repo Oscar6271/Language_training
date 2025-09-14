@@ -40,7 +40,7 @@ void trim_white_space(string & phrase, string & translation)
 pair<string, string> readfile(string const& fileName, string const& language_to_write_in,
               vector<string> & phrases, vector<string> & translations)
 {
-    ifstream file{fileName};
+    ifstream file{fileName + ".txt"};
     string line, message{}, redo_message{};
 
     while(getline(file, line))
@@ -97,7 +97,7 @@ void compare(string userInput, int randomIndex,
     }
 }
 
-void check_empty(vector<string> & phrases, vector<string> & translation, bool clear, string redo_message)
+void check_empty(vector<string> & phrases, vector<string> & translation, bool clear, string redo_message, bool & cleared)
 {
     if(phrases.empty())
     {
@@ -106,7 +106,11 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
 
         if(!phrases.empty())
         {
-            clear_terminal(clear);
+            if(!cleared)
+            {
+                clear_terminal(clear);
+                cleared = true;
+            }
             wrongCount += phrases.size();
             cout << (redo_message == "" ? "Träna på dom ord du hade fel på" : redo_message) << "\n\n";
         }
@@ -118,6 +122,7 @@ int main(int argc, char* argv[])
     vector<string> phrases, translation;
     string userInput{}, instruction, redo_message;
     pair<string, string> messages{};
+    bool cleared{false};
 
     bool clear{string(argv[argc - 1]) != "no_clear"};   
 
@@ -149,7 +154,7 @@ int main(int argc, char* argv[])
         phrases.erase(phrases.begin() + randomIndex);
         translation.erase(translation.begin() + randomIndex);
 
-        check_empty(phrases, translation, clear, redo_message);
+        check_empty(phrases, translation, clear, redo_message, cleared);
     }
 
     clear_terminal(clear);

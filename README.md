@@ -3,7 +3,7 @@
 
 ./a.out <i>filnamn språk/clear clear</i>
 
-<i>filnamn</i> byts ut mot sökvägen för filen med orden och dess översättningar i
+<i>filnamn</i> byts ut mot sökvägen för filen med orden och dess översättningar i. Filen måste vara en .txt fil men .txt ska inte skrivas ut.
 
 <i>språk/clear</i> byts ut med det språk man vill skriva i om inget språk anges blir det språket som översättningen står i som default
 

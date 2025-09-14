@@ -1,5 +1,4 @@
 gå : ir
-gå : caminar
 springa : correr
 äta : comer
 dricka : beber

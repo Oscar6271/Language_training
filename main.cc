@@ -80,6 +80,15 @@ pair<string, string> readfile(string const& fileName, string const& language_to_
     return make_pair(message, redo_message);
 }
 
+void printfile(string const& fileName, vector<string> const& phrases, vector<string> const& translation)
+{
+    for(size_t i = 0; i < phrases.size(); i++)
+    {
+        cout << phrases.at(i) << ' ' << translation.at(i) << '\n';
+    }
+    cout << '\n';
+}
+
 void compare(string userInput, int randomIndex, 
              vector<string> & phrases, vector<string> & translations)
 {
@@ -120,22 +129,28 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
 int main(int argc, char* argv[])
 {
     vector<string> phrases, translation;
-    string userInput{}, instruction, redo_message;
+    string userInput{}, instruction{}, redo_message{};
     pair<string, string> messages{};
     bool cleared{false};
 
     bool clear{string(argv[argc - 1]) != "no_clear"};   
 
-    if(argc >= 3)
+    if(argc >= 4 && (string(argv[argc - 2]) == "swedish" || string(argv[argc - 1]) == "swedish"))
     {
-        messages = readfile(argv[1], argv[2], phrases, translation);
+        messages = readfile(argv[1], string(argv[argc - 2]), phrases, translation);
+        clear_terminal(clear);
     }
     else 
     {
         messages = readfile(argv[1], "spanish", phrases, translation);
+        clear_terminal(clear);
     }
 
-    clear_terminal(clear);
+    if(argc >= 3 && string(argv[2]) == "list")
+    {
+        printfile(argv[2], phrases, translation);
+    }
+
     instruction = messages.first;
     redo_message = messages.second;
     

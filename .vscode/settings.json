@@ -4,6 +4,8 @@
         "string_view": "cpp",
         "deque": "cpp",
         "vector": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "algorithm": "cpp",
+        "iomanip": "cpp"
     }
 }

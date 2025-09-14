@@ -5,11 +5,12 @@
 #include <algorithm>
 #include <cstdlib>
 #include <limits>
+#include <iomanip>
 
 using namespace std;
 
 vector<string> wrong_answers{}, wrong_translations{};
-int wrongCount{};
+int wrongCount{}, wordCount{};
 
 void clear_terminal(bool clear)
 {
@@ -41,7 +42,12 @@ pair<string, string> readfile(string const& fileName, string const& language_to_
               vector<string> & phrases, vector<string> & translations)
 {
     ifstream file{fileName + ".txt"};
-    string line, message{}, redo_message{};
+    string line, message{"Skriv översättningen för ordet som skrivs ut"}, redo_message{"Träna på dom ord du hade fel på"};
+
+    if(!file.is_open())
+    {
+        throw invalid_argument("Filen finns inte!");
+    }
 
     while(getline(file, line))
     {
@@ -84,10 +90,10 @@ void printfile(string const& fileName, vector<string> const& phrases, vector<str
 {
     for(size_t i = 0; i < phrases.size(); i++)
     {
-        cout << phrases.at(i) << "\t = " << translation.at(i) << "\n";
-        cout << "￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n";
+        cout << left << setw(20) << phrases.at(i)
+             << right << translation.at(i) << "\n"
+             << "￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n";
     }
-    // cout << '\n';
 }
 
 void compare(string userInput, int randomIndex, 
@@ -122,41 +128,15 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
                 cleared = true;
             }
             wrongCount += phrases.size();
-            cout << (redo_message == "" ? "Träna på dom ord du hade fel på" : redo_message) << "\n\n";
+            cout << redo_message << "\n\n";
         }
     }
 }
 
-int main(int argc, char* argv[])
+void run(vector<string> & phrases, vector<string> & translation, bool clear, string const& redo_message)
 {
-    vector<string> phrases, translation;
-    string userInput{}, instruction{}, redo_message{};
-    pair<string, string> messages{};
+    string userInput;
     bool cleared{false};
-
-    bool clear{string(argv[argc - 1]) != "no_clear"};   
-
-    if(argc >= 4 && (string(argv[argc - 2]) == "swedish" || string(argv[argc - 1]) == "swedish"))
-    {
-        messages = readfile(argv[1], string(argv[argc - 2]), phrases, translation);
-        clear_terminal(clear);
-    }
-    else 
-    {
-        messages = readfile(argv[1], "spanish", phrases, translation);
-        clear_terminal(clear);
-    }
-
-    if(argc >= 3 && string(argv[2]) == "list")
-    {
-        printfile(argv[2], phrases, translation);
-    }
-
-    instruction = messages.first;
-    redo_message = messages.second;
-    
-    cout << (instruction == "" ? "Skriv översättningen för ordet som skrivs ut" : instruction) 
-         << "\n\n";
 
     while(!phrases.empty())
     {
@@ -172,10 +152,61 @@ int main(int argc, char* argv[])
 
         check_empty(phrases, translation, clear, redo_message, cleared);
     }
+}
+
+pair<string, string> initialize(int argc, char* argv[], vector<string> & phrases, vector<string> & translation, bool clear)
+{
+    pair<string, string> messages{};
+
+    if(argc >= 4 && (string(argv[argc - 2]) == "swedish" || string(argv[argc - 1]) == "swedish"))
+    {
+        messages = readfile(argv[1], string(argv[argc - 2]), phrases, translation);  
+    }
+    else 
+    {
+        messages = readfile(argv[1], "spanish", phrases, translation);
+    }
 
     clear_terminal(clear);
 
-    cout << "Klar!\nTotalt hade du: " << wrongCount << " fel\n";
+    if(argc >= 3 && string(argv[2]) == "list")
+    {
+        printfile(argv[2], phrases, translation);
+    }
+
+    wordCount = phrases.size();
+
+    return messages;
+}
+
+int main(int argc, char* argv[])
+{
+    vector<string> phrases, translation;
+    string instruction{}, redo_message{};
+    pair<string, string> messages{};
+    
+    bool clear{string(argv[argc - 1]) != "no_clear"};   
+
+    try
+    {
+        messages = initialize(argc, argv, phrases, translation, clear);
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+        return EXIT_FAILURE;
+    }
+
+    instruction = messages.first;
+    redo_message = messages.second;
+    
+    cout << instruction << "\n\n";
+
+    run(phrases, translation, clear, redo_message);
+
+    clear_terminal(clear);
+
+    cout << "Klar!\nTotalt hade du: " << wrongCount << " fel av " << wordCount << " ord\n";
     
     return 0;
 }

@@ -143,7 +143,7 @@ void run(vector<string> & phrases, vector<string> & translation, bool clear, str
         int randomIndex{rand() % (int) phrases.size()};
         cout << phrases.at(randomIndex) << ": ";
 
-        cin >> userInput;
+        getline(cin, userInput);
 
         compare(userInput, randomIndex, phrases, translation);
 

@@ -158,7 +158,7 @@ pair<string, string> initialize(int argc, char* argv[], vector<string> & phrases
 {
     pair<string, string> messages{};
 
-    if(argc >= 4 && (string(argv[argc - 2]) == "swedish" || string(argv[argc - 1]) == "swedish"))
+    if(argc >= 3 && (string(argv[argc - 2]) == "swedish" || string(argv[argc - 1]) == "swedish"))
     {
         messages = readfile(argv[1], string(argv[argc - 2]), phrases, translation);  
     }

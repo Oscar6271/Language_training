@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <limits>
 #include <iomanip>
+#include <random>
 
 using namespace std;
 
@@ -133,6 +134,15 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
     }
 }
 
+long int random(int max)
+{
+    random_device r;
+    default_random_engine e1(r());
+    uniform_int_distribution<int> uniform_dist(0, max);
+    
+    return uniform_dist(e1);
+}
+
 void run(vector<string> & phrases, vector<string> & translation, bool clear, string const& redo_message)
 {
     string userInput;
@@ -140,7 +150,7 @@ void run(vector<string> & phrases, vector<string> & translation, bool clear, str
 
     while(!phrases.empty())
     {
-        int randomIndex{rand() % (int) phrases.size()};
+        long int randomIndex{random(phrases.size() - 1)};
         cout << phrases.at(randomIndex) << ": ";
 
         getline(cin, userInput);

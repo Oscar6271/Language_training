@@ -114,7 +114,7 @@ void compare(string userInput, int randomIndex,
     }
 }
 
-void check_empty(vector<string> & phrases, vector<string> & translation, bool clear, string redo_message, bool & cleared)
+void check_empty(vector<string> & phrases, vector<string> & translation, string redo_message, bool & cleared)
 {
     if(phrases.empty())
     {
@@ -125,11 +125,11 @@ void check_empty(vector<string> & phrases, vector<string> & translation, bool cl
         {
             if(!cleared)
             {
-                clear_terminal(clear);
+                cout << "\033[2J\033[H";
                 cleared = true;
             }
             wrongCount += phrases.size();
-            cout << redo_message << "\n\n";
+            cout << "\n_______________________________\n" << redo_message << "\n\n";
         }
     }
 }
@@ -158,9 +158,9 @@ void run(vector<string> & phrases, vector<string> & translation, bool clear, str
         compare(userInput, randomIndex, phrases, translation);
 
         phrases.erase(phrases.begin() + randomIndex);
-        translation.erase(translation.begin() + randomIndex);
+        translation.erase(translation.begin() + randomIndex);        
 
-        check_empty(phrases, translation, clear, redo_message, cleared);
+        check_empty(phrases, translation, redo_message, cleared);
     }
 }
 

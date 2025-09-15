@@ -206,7 +206,7 @@ int main(int argc, char* argv[])
 
     clear_terminal(clear);
 
-    cout << "Klar!\nTotalt hade du: " << wrongCount << " fel av " << wordCount << " ord\n";
+    cout << "Klar!\nTotalt hade du " << wrongCount << " fel av " << wordCount << " ord\n";
     
     return 0;
 }

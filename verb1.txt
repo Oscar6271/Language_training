@@ -10,5 +10,6 @@ lämna : dejar
 passa in : caber
 gillar (singular) : gusta
 gillar (plural) : gustan
+gillar : gustar
 hata : odiar
 respektera : respetar

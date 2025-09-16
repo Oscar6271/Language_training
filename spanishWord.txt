@@ -6,7 +6,7 @@ stad : ciudad
 liten : pequeño
 fönster : ventanas
 genom : través
-kan : peude
+kan : puede
 ute : fuera
 se : ver
 inom : dentro

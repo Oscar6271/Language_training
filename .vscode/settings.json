@@ -6,6 +6,7 @@
         "vector": "cpp",
         "iostream": "cpp",
         "algorithm": "cpp",
-        "iomanip": "cpp"
+        "iomanip": "cpp",
+        "array": "cpp"
     }
 }

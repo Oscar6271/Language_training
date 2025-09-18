@@ -13,34 +13,30 @@ using namespace std;
 vector<string> wrong_answers{}, wrong_translations{};
 int wrongCount{}, wordCount{};
 
-void debug_string(const string& s) {
+// skriver ut hexadecimala ASCII koden för varje tecken
+void debug_string(string const& s) 
+{
     cout << "[";
-    for (unsigned char c : s) {
+    for (unsigned char c : s) 
+    {
         cout << hex << (int)c << " ";
     }
     cout << "]\n";
 }
-
-string clean_input(string s) {
-    // trimma whitespace
-    s.erase(0, s.find_first_not_of(" \t\n\r\f\v"));
-    s.erase(s.find_last_not_of(" \t\n\r\f\v") + 1);
-
-    // ta bort sista tecknet om det inte är en bokstav
-    while (!s.empty() && !isalpha(static_cast<unsigned char>(s.back()))) {
-        s.pop_back();
-    }
-
-    return s;
-}
-
-
 
 void clear_terminal(bool clear)
 {
     if(clear)
     {
         system("clear");
+    }
+}
+
+void clean_string(string & word)
+{
+    if (!word.empty() && word.back() == '\r') 
+    {
+        word.pop_back();
     }
 }
 
@@ -60,6 +56,9 @@ void trim_white_space(string & phrase, string & translation)
     phrase.erase(phrase.find_last_not_of(" \t") + 1);
     translation.erase(0, translation.find_first_not_of(" \t"));
     translation.erase(translation.find_last_not_of(" \t") + 1);
+
+    clean_string(phrase);
+    clean_string(translation);
 }
 
 pair<string, string> readfile(string const& fileName, string const& language_to_write_in,
@@ -70,7 +69,7 @@ pair<string, string> readfile(string const& fileName, string const& language_to_
 
     if(!file.is_open())
     {
-        throw invalid_argument("Filen finns inte!");
+        throw invalid_argument("Filen finns inte! Skriv inte med .txt");
     }
 
     while(getline(file, line))
@@ -122,16 +121,12 @@ void printfile(string const& fileName, vector<string> const& phrases, vector<str
 
 void compare(string userInput, int randomIndex, 
              vector<string> & phrases, vector<string> & translations)
-{
-    userInput = clean_input(userInput);
-    debug_string(userInput);
-    debug_string(translations.at(randomIndex));
+{    
+    string correctAnswer = translations.at(randomIndex);
 
-    userInput.erase(0, userInput.find_first_not_of(" \t"));
-    userInput.erase(userInput.find_last_not_of(" \t") + 1);
+    clean_string(userInput);
 
     to_lower(userInput);
-    string correctAnswer = translations.at(randomIndex);
     to_lower(correctAnswer);
 
     if(userInput != correctAnswer)

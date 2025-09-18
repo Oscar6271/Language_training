@@ -1,4 +1,4 @@
-laga : cocinar
+laga mat : cocinar
 ringa : llamar
 skicka : enviar
 ta : tomar

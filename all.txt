@@ -8,7 +8,6 @@ fönster : ventanas
 genom : través
 kan : puede
 ute : fuera
-se : ver
 inom : dentro
 sida : página
 lastbil : camión
@@ -18,7 +17,6 @@ har : tienen
 gata : calle
 varmt : abrigado
 verkar : parece
-läsa : leer
 kväll : noche
 varje : cada
 skydda : protege
@@ -28,8 +26,6 @@ diskutera : discutir
 ändra : cambiar
 vända : volver
 anlända : llegar
-förstå : entender
-lämna : dejar
 passa in : caber
 gillar (singular) : gusta
 gillar (plural) : gustan
@@ -37,7 +33,6 @@ gillar : gustar
 hata : odiar
 respektera : respetar
 gå : ir
-springa : correr
 äta : comer
 dricka : beber
 sova : dormir
@@ -48,25 +43,20 @@ lyssna : escuchar
 se : ver
 höra : oír
 köpa : comprar
-sälja : vender
 öppna : abrir
-stänga : cerrar
 förstå : entender
 lära : aprender
-undervisa : enseñar
 tro : creer
 vänta : esperar
 arbeta : trabajar
 betala : pagar
 hjälpa : ayudar
-leka : jugar
 måla : pintar
 simma : nadar
-springa : correr
 hoppa : saltar
 stanna : quedarse
 resa : viajar
-träffa : encontrar
+träffa/hitta : encontrar
 fråga : preguntar
 svara : responder
 säga : decir
@@ -79,9 +69,6 @@ laga mat : cocinar
 ringa : llamar
 skicka : enviar
 ta : tomar
-hålla : mantener
-sätta : poner
-hitta : encontrar
 stänga : cerrar
 rensa : limpiar
 dammsuga : aspirar
@@ -97,7 +84,6 @@ skratta : reír
 leva : vivir
 dö : morir
 flytta : mudarse
-skapa : crear
 rita : dibujar
 sjunga : cantar
 spela : tocar
@@ -110,13 +96,11 @@ stoppa : parar
 få : recibir
 ge : dar
 hålla : mantener
-lämna : dejar
-säga : decir
+lämna/låta : dejar
 visa : mostrar
-visa : enseñar
+undervisa : enseñar
 boka : reservar
 komma : venir
-gå : ir
 sätta : poner
 prata : charlar
 behöva : necesitar
@@ -125,7 +109,5 @@ förlora : perder
 vinna : ganar
 lägga : colocar
 träffa : conocer
-hitta : encontrar
 försöka : intentar
 påminna : recordar
-låta : dejar

@@ -16,5 +16,5 @@ hålla : mantener
 lämna : dejar
 säga : decir
 visa : mostrar
-visa : enseñar
+undervisa : enseñar
 boka : reservar

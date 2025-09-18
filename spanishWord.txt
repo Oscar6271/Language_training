@@ -1,6 +1,6 @@
 nästa : siguiente
 armar : brazos
-promenera : caminan
+promenera : caminar
 barn : niño
 stad : ciudad
 liten : pequeño

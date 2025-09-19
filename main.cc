@@ -12,6 +12,7 @@ using namespace std;
 
 vector<string> wrong_answers{}, wrong_translations{};
 int wrongCount{}, wordCount{};
+bool firstRound{true}, cleared{false};
 
 // skriver ut hexadecimala ASCII koden för varje tecken
 void debug_string(string const& s) 
@@ -145,10 +146,16 @@ void compare(string userInput, int randomIndex,
 }
 
 
-void check_empty(vector<string> & phrases, vector<string> & translation, string redo_message, bool & cleared)
+void check_empty(vector<string> & phrases, vector<string> & translation, string redo_message)
 {
     if(phrases.empty())
     {
+        if(firstRound)
+        {
+            wrongCount += wrong_answers.size();
+            firstRound = false;
+        }
+
         phrases = std::move(wrong_answers);
         translation = std::move(wrong_translations);
 
@@ -159,7 +166,7 @@ void check_empty(vector<string> & phrases, vector<string> & translation, string 
                 cout << "\033[2J\033[H";
                 cleared = true;
             }
-            wrongCount += phrases.size();
+            
             cout << "\n_______________________________\n" << redo_message << "\n\n";
         }
     }
@@ -177,7 +184,6 @@ long int random(int max)
 void run(vector<string> & phrases, vector<string> & translation, bool clear, string const& redo_message)
 {
     string userInput;
-    bool cleared{false};
 
     while(!phrases.empty())
     {
@@ -191,7 +197,7 @@ void run(vector<string> & phrases, vector<string> & translation, bool clear, str
         phrases.erase(phrases.begin() + randomIndex);
         translation.erase(translation.begin() + randomIndex);        
 
-        check_empty(phrases, translation, redo_message, cleared);
+        check_empty(phrases, translation, redo_message);
     }
 }
 

@@ -1,0 +1,16 @@
+människa : persona
+man : hombre
+kvinna : mujer
+barn : niño
+pojke : chico
+flicka : chica
+vän : amigo
+familj : familia
+mor : madre
+far : padre
+syster : hermana
+bror : hermano
+son : hijo
+dotter : hija
+förälder : padre/madre
+släkt : parientes

@@ -1,0 +1,20 @@
+arm : brazo
+hand : mano
+finger : dedo
+ben : pierna
+fot : pie
+huvud : cabeza
+ansikte : cara
+öga : ojo
+öra : oreja
+näsa : nariz
+mun : boca
+tand : diente
+hjärta : corazón
+mage : estómago
+rygg : espalda
+skuldra : hombro
+hår : pelo
+hud : piel
+blod : sangre
+ben (skelett) : hueso

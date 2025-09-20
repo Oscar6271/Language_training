@@ -1,0 +1,9 @@
+pengar : dinero
+mynt : moneda
+sedel : billete
+bank : banco
+affär : tienda
+butik : comercio
+marknad : mercado
+pris : precio
+vara : producto

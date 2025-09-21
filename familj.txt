@@ -12,5 +12,5 @@ syster : hermana
 bror : hermano
 son : hijo
 dotter : hija
-förälder : padre/madre
+förälder : padres
 släkt : parientes

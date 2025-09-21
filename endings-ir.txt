@@ -1,0 +1,8 @@
+yo : -o
+tú : -es
+él/ella : -e
+nosotros : -imos
+vosotros : -ís
+ellos : -en
+Skriv rätt ändelse för pronomen eller tvärtom för -ir verb
+Träna på de ändelser eller pronom du hade fel på

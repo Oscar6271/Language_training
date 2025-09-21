@@ -1,0 +1,50 @@
+51 : cincuenta y uno
+52 : cincuenta y dos
+53 : cincuenta y tres
+54 : cincuenta y cuatro
+55 : cincuenta y cinco
+56 : cincuenta y seis
+57 : cincuenta y siete
+58 : cincuenta y ocho
+59 : cincuenta y nueve
+60 : sesenta
+61 : sesenta y uno
+62 : sesenta y dos
+63 : sesenta y tres
+64 : sesenta y cuatro
+65 : sesenta y cinco
+66 : sesenta y seis
+67 : sesenta y siete
+68 : sesenta y ocho
+69 : sesenta y nueve
+70 : setenta
+71 : setenta y uno
+72 : setenta y dos
+73 : setenta y tres
+74 : setenta y cuatro
+75 : setenta y cinco
+76 : setenta y seis
+77 : setenta y siete
+78 : setenta y ocho
+79 : setenta y nueve
+80 : ochenta
+81 : ochenta y uno
+82 : ochenta y dos
+83 : ochenta y tres
+84 : ochenta y cuatro
+85 : ochenta y cinco
+86 : ochenta y seis
+87 : ochenta y siete
+88 : ochenta y ocho
+89 : ochenta y nueve
+90 : noventa
+91 : noventa y uno
+92 : noventa y dos
+93 : noventa y tres
+94 : noventa y cuatro
+95 : noventa y cinco
+96 : noventa y seis
+97 : noventa y siete
+98 : noventa y ocho
+99 : noventa y nueve
+100 : cien

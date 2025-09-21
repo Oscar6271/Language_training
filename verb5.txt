@@ -3,7 +3,7 @@ flytta : mudarse
 skapa : crear
 rita : dibujar
 sjunga : cantar
-spela : tocar
+spela : knacka
 vila : descansar
 andas : respirar
 sända : transmitir

@@ -77,7 +77,7 @@ röra : mover
 sälja : vender
 känna : sentir
 vakna : despertar
-leka : jugar
+leka/spela : jugar
 springa : correr
 gråta : llorar
 skratta : reír
@@ -86,7 +86,7 @@ dö : morir
 flytta : mudarse
 rita : dibujar
 sjunga : cantar
-spela : tocar
+knacka : tocar
 vila : descansar
 andas : respirar
 sända : transmitir

@@ -13,7 +13,7 @@ röra : mover
 sälja : vender
 känna : sentir
 vakna : despertar
-leka : jugar
+spela : jugar
 springa : correr
 gråta : llorar
 skratta : reír

@@ -33,12 +33,15 @@ void clear_terminal(bool clear)
     }
 }
 
-void clean_string(string & word)
+void clean_string(string & s)
 {
-    if (!word.empty() && word.back() == '\r') 
-    {
-        word.pop_back();
+    while (!s.empty() && (s.back() == L'\r' || s.back() == L'\n')) {
+        s.pop_back();
     }
+
+    std::replace_if(s.begin(), s.end(), [](wchar_t c) {
+        return std::iswspace(c) && c != L' ';
+    }, L' ');
 }
 
 string to_lower(string & word)

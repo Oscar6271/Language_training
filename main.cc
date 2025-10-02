@@ -69,8 +69,12 @@ pair<string, string> readfile(string const& fileName, string const& language_to_
               vector<string> & phrases, vector<string> & translations)
 {
     string filePath{fileName};
-    
-    if(fileName.substr(fileName.size() - 4) != ".txt")
+
+    if(fileName.size() <= 3)
+    {
+        filePath += ".txt";
+    }
+    else if(fileName.substr(fileName.size() - 4) != ".txt")
     {
         filePath += ".txt";
     }
@@ -170,14 +174,14 @@ void check_empty(vector<string> & phrases, vector<string> & translation, string 
         translation = std::move(wrong_translations);
 
         if(!phrases.empty())
-        {
+        {            
             if(!cleared)
             {
                 cout << "\033[2J\033[H";
                 cleared = true;
             }
-            
-            cout << "\n_______________________________\n" << redo_message << "\n\n";
+
+            cout << "_______________________________\n" << redo_message << "\n\n";
         }
     }
 }

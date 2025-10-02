@@ -68,12 +68,19 @@ void trim_white_space(string & phrase, string & translation)
 pair<string, string> readfile(string const& fileName, string const& language_to_write_in,
               vector<string> & phrases, vector<string> & translations)
 {
-    ifstream file{fileName + ".txt"};
+    string filePath{fileName};
+    
+    if(fileName.substr(fileName.size() - 4) != ".txt")
+    {
+        filePath += ".txt";
+    }
+
+    ifstream file{filePath};
     string line, message{"Skriv översättningen för ordet som skrivs ut"}, redo_message{"Träna på dom ord du hade fel på"};
 
     if(!file.is_open())
     {
-        throw invalid_argument("Filen finns inte! Skriv inte med .txt");
+        throw invalid_argument("Filen finns inte!");
     }
 
     while(getline(file, line))

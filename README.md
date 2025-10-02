@@ -3,7 +3,7 @@
 
 ./a.out <i>filnamn list språk/clear clear</i>
 
-<i>filnamn</i> byts ut mot sökvägen för filen med orden och dess översättningar i. Filen måste vara en .txt fil men .txt ska inte skrivas ut.
+<i>filnamn</i> byts ut mot sökvägen för filen med orden och dess översättningar i. Filen måste vara en .txt fil men .txt behöver inte skrivas med
 
 <i>list</i> är ett frivilligt argument som kan skrivas för att skriva ut alla orden och dess översättningar från den valda filen
 

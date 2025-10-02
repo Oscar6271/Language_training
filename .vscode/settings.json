@@ -7,6 +7,7 @@
         "iostream": "cpp",
         "algorithm": "cpp",
         "iomanip": "cpp",
-        "array": "cpp"
+        "array": "cpp",
+        "stdexcept": "cpp"
     }
 }

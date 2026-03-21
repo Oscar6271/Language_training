@@ -2,7 +2,8 @@ dröm : sueño
 vilken : cuál
 beslut : decisión
 kontor : oficina
-varje dag : cada día
+dagligen : cada día
+varje dag : todos los días
 email : correos electrónicos
 rapport : informe
 vackra : hermosos

@@ -1,15 +1,19 @@
 # Instruktioner
 ## Starta programmet med:
 
-./a.out <i>filnamn list språk/clear clear</i>
+./a.out <i>filnamn folder print språk/clear clear</i>
 
 <i>filnamn</i> byts ut mot sökvägen för filen med orden och dess översättningar i. Filen måste vara en .txt fil men .txt behöver inte skrivas med
 
-<i>list</i> är ett frivilligt argument som kan skrivas för att skriva ut alla orden och dess översättningar från den valda filen
+<i>folder</i> används för att specifiera vilken mapp programmet ska leta efter text filen i. Om ingen mapp specifieras kollar programmet i den mapp det körs från
+
+<i>print</i> är ett frivilligt argument som kan skrivas för att skriva ut alla orden och dess översättningar från den valda filen
 
 <i>språk/clear</i> byts ut med det språk man vill skriva i om inget språk anges blir det språket som översättningen står i som default
 
-Programmet kommer som default att kunna rensa terminalen vill man inte ha den funktionaliten behöver man skriva som sista argument "no_clear"
+<i>clear</i> Programmet kommer som default att kunna rensa terminalen vill man inte ha den funktionaliten behöver man skriva som sista argument "no_clear"
+
+Kommandon kan komma i vilken ordning som helst. a.out och filnamn behöver dock komma som kommando 1 och 2.
 
 ## Format för filer
 Filerna skriv enligt formatet:<br>

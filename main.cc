@@ -11,7 +11,10 @@
 using namespace std;
 
 vector<string> wrong_answers{}, wrong_translations{};
+vector<string> commands{"print", "swedish", "clear", "no_clear"};
+
 int wrongCount{}, wordCount{};
+
 bool firstRound{true}, cleared{false};
 
 // skriver ut hexadecimala ASCII koden för varje tecken
@@ -65,10 +68,14 @@ void trim_white_space(string & phrase, string & translation)
     clean_string(translation);
 }
 
-pair<string, string> readfile(string const& fileName, string const& language_to_write_in,
-              vector<string> & phrases, vector<string> & translations)
+pair<string, string> readfile(string const& fileName, string const& folder,
+                              bool write_in_swedish, vector<string> & phrases, 
+                              vector<string> & translations)
 {
-    string filePath{fileName};
+    phrases.clear();
+    translations.clear();
+
+    string filePath{folder + '/' + fileName};
 
     if(fileName.size() <= 3)
     {
@@ -94,7 +101,7 @@ pair<string, string> readfile(string const& fileName, string const& language_to_
         {
             string phrase, translation;
 
-            if(language_to_write_in == "spanish" || language_to_write_in == "no_clear")
+            if(!write_in_swedish)
             {
                 phrase = line.substr(0, pos);
                 translation = line.substr(pos + 1);
@@ -124,7 +131,8 @@ pair<string, string> readfile(string const& fileName, string const& language_to_
     return make_pair(message, redo_message);
 }
 
-void printfile(string const& fileName, vector<string> const& phrases, vector<string> const& translation)
+void printfile(string const& fileName, vector<string> const& phrases, 
+               vector<string> const& translation)
 {
     for(size_t i = 0; i < phrases.size(); i++)
     {
@@ -215,26 +223,49 @@ void run(vector<string> & phrases, vector<string> & translation, bool clear, str
     }
 }
 
+string match_any(string const& command)
+{
+    for(string const& allowed_command : commands)
+    {
+        if(allowed_command == command)
+        {
+            return allowed_command;
+        }
+    }
+    return {};
+}
+
 pair<string, string> initialize(int argc, char* argv[], vector<string> & phrases, vector<string> & translation, bool clear)
 {
     pair<string, string> messages{};
+    bool printFile{false}, write_in_swedish{false};
+    string folder{"./"};
 
-    if(argc >= 3 && (string(argv[argc - 2]) == "swedish" || string(argv[argc - 1]) == "swedish"))
+    for(int i{2}; i < argc; i++)
     {
-        messages = readfile(argv[1], string(argv[argc - 2]), phrases, translation);  
-    }
-    else 
-    {
-        messages = readfile(argv[1], "spanish", phrases, translation);
+        if(argc >= 3 && string(argv[i]) == "print")
+        {
+            printFile = true;
+        }
+        else if(argc >= 3 && string(argv[i]) == "swedish")
+        {
+            write_in_swedish = true;
+        }
+        else if(argc >= 3 && match_any(string(argv[i])) == "")
+        {
+            // om användaren har skrivit ett till kommando, men som inte
+            // matchar något annat kommando är det foldernamn
+            folder = string(argv[i]);
+        }
     }
 
     clear_terminal(clear);
-
-    if(argc >= 3 && string(argv[2]) == "list")
+    messages = readfile(argv[1], folder, write_in_swedish, phrases, translation);
+    
+    if(printFile)
     {
-        printfile(argv[2], phrases, translation);
+        printfile(argv[1], phrases, translation);
     }
-
     wordCount = phrases.size();
 
     return messages;

@@ -8,8 +8,6 @@ anlända : llegar
 förstå : entender
 lämna : dejar
 passa in : caber
-gillar (singular) : gusta
-gillar (plural) : gustan
-gillar : gustar
+gilla : gustar
 hata : odiar
 respektera : respetar

@@ -1,0 +1,21 @@
+vara : estar
+göra : hacer
+poder : kunna
+säga : decir
+gå : ir
+se : ver
+ge : dar
+veta : saber
+vilja : querer
+hända : pasar
+äga : deber
+placera : poner
+verka : parecer
+stanna kvar : quedar
+tro : creer
+tala : hablar
+lämna : dejar
+följa : seguir
+hitta : encontrar
+kommar : venir
+

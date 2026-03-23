@@ -1,0 +1,23 @@
+tänka : pensar
+gå ut : salir
+volver : återvända
+ta : tomar
+känna till : conocer
+leva : vivir
+känna : sentir
+behandla : tratar
+kolla : mirar
+räkna : contar
+börjar : empezar
+vänta : esperar
+leta efter : buscar
+finnas : existir
+jobba : trabajar
+skriva : escribir
+förlora : perder
+producera : producir
+hända : ocurrir
+förstå : entender
+fråga om : pedir
+att få : recibir
+

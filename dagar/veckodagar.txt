@@ -1,0 +1,7 @@
+måndag : lunes
+tisdag : martes
+onsdag : miércoles
+torsdag : jueves
+fredag : viernes
+lördag : sábado
+söndag : domingo

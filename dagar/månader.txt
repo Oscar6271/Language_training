@@ -1,0 +1,12 @@
+januari : enero
+februari : febrero
+mars : marzo
+april : abril
+maj : mayo
+juni : junio
+juli : julio
+augusti : agosto
+september : septiembre
+oktober : octubre
+november : noviembre
+december : diciembre

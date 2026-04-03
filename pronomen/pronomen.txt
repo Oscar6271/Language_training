@@ -1,0 +1,8 @@
+jag : yo
+du : tú
+han : él
+hon : ella
+ni : vosotros
+vi : nosotros
+dom : ellos
+pronomen : pronombre

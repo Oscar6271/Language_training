@@ -10,7 +10,7 @@
 
 using namespace std;
 
-vector<string> commands{"print", "swedish", "clear", "no_clear"};
+vector<string> commands{"print", "swedish", "clear", "no_clear", "-f", "-file", "file"};
 
 pair<string, string> readfile(string const& fileName, string const& folder,
     bool write_in_swedish, vector<string> & phrases, 
@@ -90,14 +90,15 @@ pair<string, string> initialize(int argc, char* argv[], vector<string> & phrases
     vector<string> & translation, bool clear)
 {
     pair<string, string> messages{};
-    string input{}, command{}, folder{"."}, fileName{};
-    bool printFile{false}, write_in_swedish{false};
+    string command{}, folder{}, fileName{};
+    bool printFile{false}, write_in_swedish{false}, fileChoosen{false};
 
+    // kommandon medans man kör ./a.out
     for(int i{1}; i < argc; i++)
     {
         command = match_any(string(argv[i]));
 
-        if(command == "")
+        if(command == "" && !fileChoosen)
         {
             folder = string(argv[i]); 
         }
@@ -105,16 +106,69 @@ pair<string, string> initialize(int argc, char* argv[], vector<string> & phrases
         {
             clear = false;
         }
+        else if(command == "print")
+        {
+            printFile = true;
+        }
+        else if(command == "swedish")
+        {
+            write_in_swedish = true;
+        }
+        else if(command == "-f" || command == "-file" || command == "file")
+        {
+            string path{string(argv[i + 1])};
+
+            auto pos = path.find('/');
+
+            if(pos != string::npos)
+            {
+                folder = path.substr(0, pos);
+                fileName = path.substr(pos + 1);
+            }
+
+            fileChoosen = true;
+        }
     }
 
+    if(!fileChoosen)
+    {
+        checkCommands(fileName, write_in_swedish, printFile, folder);
+    }
+
+    clear_terminal(clear);
+    messages = readfile(fileName, folder, write_in_swedish, phrases, translation);
+    
+    if(printFile)
+    {
+        printfile(phrases, translation);
+    }
+
+    return messages;
+}
+
+void printfile(vector<string> const& phrases, vector<string> const& translation)
+{
+    for(size_t i = 0; i < phrases.size(); i++)
+    {
+        cout << left << setw(20) << phrases.at(i)
+             << right << translation.at(i) << "\n"
+             << "￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n";
+    }
+}
+
+void checkCommands(string & fileName, bool & write_in_swedish, bool & printFile, string const& folder)
+{
+    string input{};
+
     cout << "Välj fil och valfria kommandon\n\n";
-    command = "ls " + folder;
+    string command = "ls " + folder;
     system(command.c_str());
     cout << "\n\n";
 
     getline(cin, input);
     istringstream inputStream{input};
 
+    // commandon när programmet har startat
     while(inputStream >> command)
     {
         string matched_command = match_any(command);
@@ -131,26 +185,5 @@ pair<string, string> initialize(int argc, char* argv[], vector<string> & phrases
         {
             printFile = true;
         }
-    }
-
-    clear_terminal(clear);
-    messages = readfile(fileName, folder, write_in_swedish, phrases, translation);
-    
-    if(printFile)
-    {
-        printfile(fileName, phrases, translation);
-    }
-
-    return messages;
-}
-
-void printfile(string const& fileName, vector<string> const& phrases, 
-    vector<string> const& translation)
-{
-    for(size_t i = 0; i < phrases.size(); i++)
-    {
-        cout << left << setw(20) << phrases.at(i)
-             << right << translation.at(i) << "\n"
-             << "￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣\n";
     }
 }

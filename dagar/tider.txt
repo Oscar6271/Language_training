@@ -1,0 +1,9 @@
+vecka : semana
+månad : mes
+igår : ayer
+idag : hoy
+imorgon : mañana
+timma : hora
+minut : minutos
+sekund : segundo
+

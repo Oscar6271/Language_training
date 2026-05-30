@@ -46,3 +46,8 @@ void clear_terminal(bool clear)
         system("clear");
     }
 }
+
+bool end_of_file(size_t pos, int seperator, size_t max_seperator)
+{
+    return pos == string::npos && seperator == max_seperator;
+}

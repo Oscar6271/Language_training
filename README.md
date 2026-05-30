@@ -11,6 +11,8 @@
 
 <i>swedish</i> för att välja att skriva på svenska
 
+<i>-f/-file/file</i> för att direkt välja en fil
+
 ## Format för filer
 Filerna skriv enligt formatet:<br>
 <i>ord</i> : översättning<br>
@@ -26,5 +28,3 @@ Meddelande när användaren ska rätta sina fel<br>
 På de sista 2 raderna kan man skriva egna instruktioner och meddelande för när användaren ska göra om sina fel. <br>
 Om inget skrivs är blir instruktionen: "Skriv översättningen för ordet som skrivs ut"<br>
 Och meddelandet: "Träna på dom ord du hade fel på"
-
-Det är viktigt att det finns mellanrum runt : tecknet, programmet kommer att fixa till mellanrummen själv vilket kan skapa fel om mellanrummen inte finns

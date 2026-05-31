@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <cwctype>
+#include <iostream>
 
 using namespace std;
 
@@ -49,14 +50,49 @@ bool end_of_file(size_t pos, int seperator, size_t max_seperator)
     return pos == string::npos && seperator == max_seperator;
 }
 
-void ignore_explanation(string & word)
+string ignore_explanation(string const& word)
 {
     auto start = word.find('(');
 
+    string alternative = word;
     if(start != string::npos)
     {
-        word = word.substr(0, start);
-        trim_white_space(word);
+        alternative = word.substr(0, start);
+        trim_white_space(alternative);
     }
+    return alternative;
+}
 
+vector<string> find_alternatives(int randomIndex, 
+    vector<string> const& translations)
+{
+    vector<string> alternatives{};
+    string translation = translations.at(randomIndex);
+
+    do
+    {
+        auto pos = translation.find('/');
+        
+        if(pos == string::npos && translation == "")
+        {
+            break;
+        }
+        else if(pos == string::npos && translation != "")
+        {
+            trim_white_space(translation);
+            to_lower(translation);
+            alternatives.push_back(translation);
+            break;
+        }
+
+
+        string alternative = translation.substr(0, pos);
+        trim_white_space(alternative);
+        to_lower(translation);
+        alternatives.push_back(alternative);
+
+        translation = translation.substr(pos + 1);
+    } while (true);
+    
+    return alternatives;
 }

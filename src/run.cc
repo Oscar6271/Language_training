@@ -16,28 +16,38 @@ int wrongCount{};
 void compare(string & userInput, int randomIndex, 
     vector<string> & phrases, vector<string> & translations)
 {    
-    string correctAnswer = translations.at(randomIndex);
 
     clean_string(userInput);
 
     to_lower(userInput);
-    to_lower(correctAnswer);
 
-    ignore_explanation(correctAnswer);
-
-    if(userInput != correctAnswer)
-    {
-        cout << "Fel svar!\n" 
-             << phrases.at(randomIndex) << " = " 
-             << translations.at(randomIndex) << "\n\n"; 
-
-        wrong_answers.push_back(phrases.at(randomIndex));
-        wrong_translations.push_back(translations.at(randomIndex));
-    }
-    else
+    string fullAnswer = translations.at(randomIndex);
+    string alternative = ignore_explanation(fullAnswer);
+    
+    if (userInput == fullAnswer || userInput == alternative)
     {
         cout << "Rätt!\n\n";
+        return;
     }
+
+    vector<string> answers = find_alternatives(randomIndex, translations);
+
+    for(string answer : answers)
+    {
+        string explanation = ignore_explanation(answer);
+        if(userInput == answer || userInput == explanation)
+        {
+            cout << "Rätt!\n\n";
+            return;
+        }
+    }
+
+    cout << "Fel svar!\n" 
+            << phrases.at(randomIndex) << " = " 
+            << translations.at(randomIndex) << "\n\n"; 
+
+    wrong_answers.push_back(phrases.at(randomIndex));
+    wrong_translations.push_back(translations.at(randomIndex));
 }
 
 void check_empty(vector<string> & phrases, vector<string> & translation, 

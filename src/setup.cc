@@ -69,12 +69,17 @@ pair<string, string> readfile(string const& fileName, string const& folder,
     int current_seperator = 0;
     while(getline(file, line))
     {
+        if(line == "")
+        {
+            continue;
+        }
 split_string:
         auto pos = line.find(seperators.at(current_seperator));
         
         if(pos != string::npos)
         {
             split_string(phrases, translations, pos, write_in_swedish, line);
+
         }
         else if(end_of_file(pos, current_seperator, seperators.size()))
         {
@@ -90,6 +95,7 @@ split_string:
             goto split_string;
         }
     }
+    
     file.close();
 
     return make_pair(message, redo_message);

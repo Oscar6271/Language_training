@@ -4,7 +4,7 @@ FLAGS = -std=c++20
 # Objektfiler
 OBJS = build/main.o build/run.o build/setup.o build/library.o
 # Slutligt program
-TARGET = program
+TARGET = run
 
 all: $(TARGET)
 

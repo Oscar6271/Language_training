@@ -1,21 +1,22 @@
 vara : estar
 göra : hacer
-poder : kunna
+kunna : poder
 säga : decir
-gå : ir
+gå (grundform): ir
 se : ver
 ge : dar
-veta : saber
+veta/känna till : saber
 vilja : querer
 hända : pasar
 äga : deber
 placera : poner
 verka : parecer
-stanna kvar : quedar
+stanna kvar : quedarse
 tro : creer
 tala : hablar
 lämna : dejar
 följa : seguir
 hitta : encontrar
 kommar : venir
+
 

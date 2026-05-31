@@ -1,23 +1,24 @@
-blixt : rayo
-väder : tiempo
-årstid : estación
-vår : primavera
-sommar : verano
-höst : otoño
-vinter : invierno
-dag : día
-natt : noche
-morgon : mañana
-kväll : tarde
-timme : hora
-minut : minuto
-sekund : segundo
-tid : tiempo
-år : año
-månad : mes
-vecka : semana
-helg : fin de semana
-regn : lluvia
-snö : nieve
-is : hielo
-åska : trueno
+blixten : el rayo
+vädret : el tiempo
+årstiden : la estación
+våren : la primavera
+sommaren : el verano
+hösten : el otoño
+vintern : el invierno
+dagen : el día
+natten : la noche
+morgonen : la mañana
+kvällen : la noche
+eftermiddagen : la tarde
+timmen : la hora
+minuten : el minuto
+sekunden : el segundo
+tiden : el tiempo
+året : el año
+månaden : el mes
+veckan : la semana
+helgen : el fin de semana
+regnet : la lluvia
+snön : la nieve
+isen : el hielo
+åskan : el trueno

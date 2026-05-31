@@ -1,24 +1,24 @@
-hund : perro
-katt : gato
-häst : caballo
-ko : vaca
-gris : cerdo
-får : oveja
-get : cabra
-björn : oso
-varg : lobo
-lejon : león
-tiger : tigre
-apa : mono
-mus : ratón
-råtta : rata
-orm : serpiente
-groda : rana
-insekt : insecto
-spindel : araña
-mygga : mosquito
-bi : abeja
-myra : hormiga
-fjäril : mariposa
-fågel : pájaro
-fisk : pez
+hunden : el perro
+katten : el gato
+hästen : el caballo
+kon : la vaca
+grisen : el cerdo
+fåret : la oveja
+geten : la cabra
+björnen : el oso
+vargen : el lobo
+lejonet : el león
+tigern : el tigre
+apan : el mono
+musen : el ratón
+råttan : la rata
+ormen : la serpiente
+grodan : la rana
+insekten : el insecto
+spindeln : la araña
+myggan : el mosquito
+biet : la abeja
+myrab : la hormiga
+fjärileb : la mariposa
+fågeln : el pájaro
+fisken : el pez

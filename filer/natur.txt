@@ -1,20 +1,20 @@
-berg : montaña
-skog : bosque
-träd : árbol
-blomma : flor
-gräs : césped
-jord : tierra
-himmel : cielo
-sol : sol
-måne : luna
-stjärna : estrella
-eld : fuego
-vatten : agua
-luft : aire
-vind : viento
-moln : nube
-sjö : lago
-flod : río
-hav : mar
-strand : playa
-ö : isla
+berget : la montaña
+skogen : el bosque
+trädet : el árbol
+blomman : la flor
+gräset : el césped
+jorden : la tierra
+himlen : el cielo
+solen : el sol
+månen : la luna
+stjärnan : la estrella
+elden : el fuego
+vattnet : el agua
+luften : el aire
+vinden : el viento
+molnet : la nube
+sjön : el lago
+floden : el río
+havet : el mar
+stranden : la playa
+ön : la isla

@@ -28,15 +28,12 @@ void clean_string(string & s)
     }, L' ');
 }
 
-void trim_white_space(string & phrase, string & translation)
+void trim_white_space(string & phrase)
 {
     phrase.erase(0, phrase.find_first_not_of(" \t"));
     phrase.erase(phrase.find_last_not_of(" \t") + 1);
-    translation.erase(0, translation.find_first_not_of(" \t"));
-    translation.erase(translation.find_last_not_of(" \t") + 1);
 
     clean_string(phrase);
-    clean_string(translation);
 }
 
 void clear_terminal(bool clear)
@@ -50,4 +47,16 @@ void clear_terminal(bool clear)
 bool end_of_file(size_t pos, int seperator, size_t max_seperator)
 {
     return pos == string::npos && seperator == max_seperator;
+}
+
+void ignore_explanation(string & word)
+{
+    auto start = word.find('(');
+
+    if(start != string::npos)
+    {
+        word = word.substr(0, start);
+        trim_white_space(word);
+    }
+
 }

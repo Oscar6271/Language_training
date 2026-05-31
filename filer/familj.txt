@@ -1,16 +1,17 @@
-människa : persona
-man : hombre
-kvinna : mujer
-barn : niño
-pojke : chico
-flicka : chica
-vän : amigo
-familj : familia
-mor : madre
-far : padre
-syster : hermana
-bror : hermano
-son : hijo
-dotter : hija
-förälder : padres
-släkt : parientes
+personen : la persona
+mannen : el hombre
+kvinnan : la mujer
+barnet : el niño
+pojken : el chico
+flickan : la chica
+vännen : el amigo
+familjen : la familia
+mor : la madre
+far : el padre
+systern : la hermana
+bror : el hermano
+sonen : el hijo
+dottern : la hija
+föräldern : el padres
+släkten : los parientes
+släktingen : el pariente

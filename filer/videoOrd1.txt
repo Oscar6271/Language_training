@@ -1,20 +1,20 @@
-dröm : sueño
+drömmen : el sueño
 vilken : cuál
-beslut : decisión
-kontor : oficina
+beslutet : la decisión
+kontoret : la oficina
 dagligen : cada día
 varje dag : todos los días
 email : correos electrónicos
-rapport : informe
+rapporten : el informe
 vackra : hermosos
 intressant : interesante
 speciell : especial
-semester : vacacione
+semestern : las vacaciones
 jobbar hårt : trabajar duro
 ta ett beslut : tomar una decisión
-brev : carta
+brevet : la carta
 ägna sig åt : dedicar 
 följa sin dröm : seguir su sueño
 bli : convertirse
-land : países
-platser : lugares
+landet : el país
+platsen : el lugar

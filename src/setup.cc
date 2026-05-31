@@ -30,7 +30,8 @@ void split_string(vector<string> & phrases, vector<string> & translations,
         phrase = line.substr(pos + 1);
     }
 
-    trim_white_space(phrase, translation);
+    trim_white_space(phrase);
+    trim_white_space(translation);
 
     phrases.push_back(phrase);
     translations.push_back(translation);
@@ -70,6 +71,7 @@ pair<string, string> readfile(string const& fileName, string const& folder,
     {
 split_string:
         auto pos = line.find(seperators.at(current_seperator));
+        
         if(pos != string::npos)
         {
             split_string(phrases, translations, pos, write_in_swedish, line);

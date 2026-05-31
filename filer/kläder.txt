@@ -1,14 +1,14 @@
-kläder : ropa
-skor : zapatos
-jacka : chaqueta
-tröja : suéter
-byxor : pantalones
-kjol : falda
-klänning : vestido
-skjorta : camisa
-hatt : sombrero
-mössa : gorro
-handske : guante
-strumpa : calcetín
-bälte : cinturón
-klocka : reloj
+kläder : la ropa
+skorna : los zapatos
+jackan : la chaqueta
+tröjan : el suéter
+byxorna : los pantalones
+kjolen : la falda
+klänningen : el vestido
+skjortan : la camisa
+hatten : el sombrero
+mössan : la gorra
+handsken : el guante
+strumpan : el calcetín
+bältet : el cinturón
+klockan : el reloj

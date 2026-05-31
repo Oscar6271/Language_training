@@ -1,23 +1,23 @@
-nästa : siguiente
-armar : brazos
-promenera : caminar
-barn : niño
-stad : ciudad
-liten : pequeño
-fönster : ventanas
+nästa : el siguiente
+armar : los brazos
+promenera : caminar 
+barnet : el niño
+staden : la ciudad
+den lilla : el pequeño
+fönstret : la ventana
 genom : través
-kan : puede
+kan : puede 
 ute : fuera
-se : ver
-inom : dentro
-sida : página
-lastbil : camión
-buss : autobús
-byggnad : edificio
+se : ver (verb)
+inom : dentro de
+sidan : la página
+lastbilen : el camión
+bussen : el autobús
+byggnaden : el edificio
 har : tienen
-gata : calle
+gatan : la calle
 varmt : abrigado
 verkar : parece
 läsa : leer
-kväll : noche
+kvällen : la noche
 varje : cada

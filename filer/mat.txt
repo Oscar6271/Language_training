@@ -1,42 +1,42 @@
-mat : comida
-bröd : pan
-ost : queso
-mjölk : leche
-smör : mantequilla
-kött : carne
-fisk : pescado
-ägg : huevo
-frukt : fruta
-äpple : manzana
-päron : pera
-banan : plátano
-apelsin : naranja
-citron : limón
-druva : uva
-grönsak : verdura
-morot : zanahoria
-potatis : patata
-tomat : tomate
-gurka : pepino
-sallad : ensalada
-lök : cebolla
-vitlök : ajo
-svamp : seta
-ris : arroz
-pasta : pasta
-soppa : sopa
-sås : salsa
-socker : azúcar
-salt : sal
-peppar : pimienta
-olja : aceite
-vinäger : vinagre
-dryck : bebida
-vatten : agua
-kaffe : café
-te : té
-mjöl : harina
-kaka : pastel
-glass : helado
-godis : dulce
-choklad : chocolate
+maten : la comida
+brödet : el pan
+osten : el queso
+mjölken : la leche
+smöret : la mantequilla
+köttet : la carne
+fisken : el pescado
+ägget : el huevo
+frukten : la fruta
+äpplet : la manzana
+päronet : la pera
+bananen : el plátano
+apelsinen : la naranja
+citronen : el limón
+druvan : la uva
+grönsaken : la verdura
+moroten : la zanahoria
+potatisen : la patata
+tomaten : el tomate
+gurkan : el pepino
+salladen : la ensalada
+löken : la cebolla
+vitlöken : el ajo
+svampen : la seta
+riset : el arroz
+pastan : la pasta
+soppan : la sopa
+såsen : la salsa
+sockret : el azúcar
+saltet : la sal
+pepparn : la pimienta
+oljan : el aceite
+vinägern : el vinagre
+drycken : la bebida
+vattnet : el agua
+kaffet : el café
+teet : el té
+mjölet : la harina
+kakan : el pastel
+glassen : el helado
+godiset : el dulce
+chokladen : el chocolate

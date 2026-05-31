@@ -23,6 +23,8 @@ void compare(string & userInput, int randomIndex,
     to_lower(userInput);
     to_lower(correctAnswer);
 
+    ignore_explanation(correctAnswer);
+
     if(userInput != correctAnswer)
     {
         cout << "Fel svar!\n" 

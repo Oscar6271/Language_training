@@ -1,8 +1,8 @@
 tänka : pensar
 gå ut : salir
-volver : återvända
+återvända : volver
 ta : tomar
-känna till : conocer
+känna till : conocer/saber
 leva : vivir
 känna : sentir
 behandla : tratar
@@ -16,7 +16,7 @@ jobba : trabajar
 skriva : escribir
 förlora : perder
 producera : producir
-hända : ocurrir
+hända/ske : ocurrir
 förstå : entender
 fråga om : pedir
 att få : recibir

@@ -1,14 +1,14 @@
 blixten : el rayo
-vädret : el tiempo
-årstiden : la estación
+vädret : el tiempo (ute)
+årstiden : la temporada
 våren : la primavera
 sommaren : el verano
 hösten : el otoño
 vintern : el invierno
 dagen : el día
-natten : la noche
+natten : la noche (slut)
 morgonen : la mañana
-kvällen : la noche
+kvällen : la noche (sent)
 eftermiddagen : la tarde
 timmen : la hora
 minuten : el minuto

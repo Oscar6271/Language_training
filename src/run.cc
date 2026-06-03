@@ -17,7 +17,7 @@ void compare(string & userInput, int randomIndex,
     vector<string> & phrases, vector<string> & translations)
 {    
 
-    clean_string(userInput);
+    trim_white_space(userInput);
 
     to_lower(userInput);
 
@@ -66,11 +66,11 @@ void check_empty(vector<string> & phrases, vector<string> & translation,
 
         if(!phrases.empty())
         {            
-            if(!cleared)
-            {
-                cout << "\033[2J\033[H";
-                cleared = true;
-            }
+            // if(!cleared)
+            // {
+            //     cout << "\033[2J\033[H";
+            //     cleared = true;
+            // }
 
             cout << "_______________________________\n" << redo_message << "\n\n";
         }

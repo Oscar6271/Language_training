@@ -1,5 +1,11 @@
 komma : venir
 gå : ir
+jag går : yo voy
+du går : tú vas
+han går / hon går : él va / ella va
+vi går : nosotros vamos
+ni går : vosotros vais
+dom går : ellos van / ellas van
 sätta : poner
 prata : charlar
 behöva : necesitar

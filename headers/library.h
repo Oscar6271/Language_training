@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-std::string to_lower(std::string const& word);
+void to_lower(std::string & word);
 
 void clean_string(std::string & s);
 

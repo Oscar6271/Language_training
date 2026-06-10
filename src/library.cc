@@ -6,16 +6,14 @@
 
 using namespace std;
 
-string to_lower(string const& word)
+void to_lower(string & word)
 {
-    string temp_word{word};
     
-    transform(word.begin(), word.end(), temp_word.begin(),
+    transform(word.begin(), word.end(), word.begin(),
              [](unsigned char c)
              {
                 return tolower(c);
              });
-    return temp_word;
 }
 
 void clean_string(string & s)

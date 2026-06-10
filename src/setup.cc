@@ -103,7 +103,8 @@ split_string:
 
 string match_any(string const& command)
 {
-    string temp_command = to_lower(command);
+    string temp_command{command};
+    to_lower(temp_command);
 
     for(string const& allowed_command : commands)
     {

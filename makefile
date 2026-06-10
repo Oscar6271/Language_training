@@ -2,7 +2,7 @@
 FLAGS = -std=c++20
 
 # Objektfiler
-OBJS = build/main.o build/run.o build/setup.o build/library.o
+OBJS = build/library.o build/main.o build/run.o build/setup.o
 # Slutligt program
 TARGET = run
 
